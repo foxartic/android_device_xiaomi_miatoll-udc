@@ -1,4 +1,4 @@
-# Copyright (C) 2023 SuperiorExtended
+# Copyright (C) 2023 voltage
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,9 +13,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/superior_miatoll.mk
+    $(LOCAL_DIR)/voltage_miatoll.mk
 
 COMMON_LUNCH_CHOICES := \
-    superior_miatoll-user \
-    superior_miatoll-userdebug \
-    superior_miatoll-eng
+    voltage_miatoll-user \
+    voltage_miatoll-userdebug \
+    voltage_miatoll-eng
