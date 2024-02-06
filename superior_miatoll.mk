@@ -8,19 +8,32 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common SuperiorOS stuff.
-$(call inherit-product, vendor/superior/config/common.mk)
-
 # Inherit from miatoll device
 $(call inherit-product, device/xiaomi/miatoll/device.mk)
 
-# SuperiorOS stuff
-TARGET_INCLUDE_PIXEL_CHARGER := true
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_GAPPS_ARCH := arm64
-TARGET_USES_AOSP_RECOVERY := true
-TARGET_SUPPORTS_BLUR := true
+# # Inherit some common SuperiorExtendedOS stuff.
+$(call inherit-product, vendor/superior/config/common.mk)
 
+SUPERIOR_OFFICIAL := true
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_SHIPS_PREBUILT_GCAM := false
+TARGET_INCLUDE_MATLOG := false
+USE_MOTO_CALCULATOR := true
+TARGET_SUPPORTS_BLUR := true
+SUPERIOR_UDFPS_ANIMATIONS := false
+USE_MOTO_CLOCK := true
+SYSTEM_OPTIMIZE_JAVA := true
+SYSTEMUI_OPTIMIZE_JAVA := true
+BUILD_WITH_GAPPS := false
+USE_QUICKPIC := false
+USE_DUCKDUCKGO := false
+USE_ViaBrowser := false
+TARGET_BUILD_VIMUSIC := true
+
+# MiuiCamera
+$(call inherit-product-if-exists, vendor/xiaomi/miuicamera/config.mk)
+
+# Device Props
 PRODUCT_NAME := superior_miatoll
 PRODUCT_DEVICE := miatoll
 PRODUCT_MANUFACTURER := Xiaomi
