@@ -38,18 +38,13 @@ $(call inherit-product-if-exists, vendor/xiaomi/miuicamera/config.mk)
 
 # Inherit some common SuperiorExtendedOS stuff.
 TARGET_INCLUDE_MATLOG := false
-TARGET_INCLUDE_PIXEL_CHARGER := true
 USE_MOTO_CALCULATOR := true
-TARGET_SUPPORTS_BLUR := true
+TARGET_SUPPORTS_BLUR := false
 SUPERIOR_UDFPS_ANIMATIONS := false
 USE_MOTO_CLOCK := false
 SYSTEM_OPTIMIZE_JAVA := true
 SYSTEMUI_OPTIMIZE_JAVA := true
 BUILD_WITH_GAPPS := true
-TARGET_CORE_GMS := true
-USE_QUICKPIC := true
+USE_QUICKPIC := false
 USE_DUCKDUCKGO := false
-
-# Maintainer
-PRODUCT_SYSTEM_PROPERTIES += \
-     ro.spos.maintainer=AtharvaSwamy
+SUPERIOR_OFFICIAL := true
