@@ -19,14 +19,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from miatoll device
 $(call inherit-product, device/xiaomi/miatoll/device.mk)
 
-# Inherit common lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit common Rising stuff.
+$(call inherit-product, vendor/rising/config/rising.mk)
 
 # Bootanimation Resolution
 TARGET_BOOT_ANIMATION_RES := 1080
 
 # Device
-PRODUCT_NAME := lineage_miatoll
+PRODUCT_NAME := rising_miatoll
 PRODUCT_DEVICE := miatoll
 PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := SM6250
@@ -36,7 +36,7 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 # MiuiCamera
 $(call inherit-product-if-exists, vendor/xiaomi/miuicamera/config.mk)
 
-# Inherit some common device props
+# Inherit some RisingOS props
 TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_INCLUDE_LIVE_WALLPAPERS := true
 TARGET_INCLUDE_OEM_CAMERA := true
@@ -46,10 +46,9 @@ TARGET_SUPPORTS_GOOGLE_RECORDER := true
 TARGET_SUPPORTS_NEXT_GEN_ASSISTANT := true
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_DISABLE_EPPE := true
-WITH_GMS := true
-MATRIXX_CHIPSET := MIATOLL
-MATRIXX_BATTERY := 5000mah
+WITH_GMS := false
+RISING_CHIPSET := SD720G
 TARGET_HAS_UDFPS := false
-MATRIXX_BUILD_TYPE := Unofficial
-MATRIXX_MAINTAINER := Atharva&&Ihsan
-MATRIXX_DISPLAY := 1080x2400
+RISING_MAINTAINER := AtharvaSwamy
+TARGET_ENABLE_BLUR := true
+TARGET_CORE_GMS := true
